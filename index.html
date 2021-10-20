@@ -6,18 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Picker</title>
     <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
-    <h1>Colors Picker</h1>
-    <div class="main">
-       Result in Rgb : <input type="text" id="box" value="rgb(255,255,255)">
-       Result in Hex : <input type="text" id="box2" value="#fffff">
-       Red: <input type="range" id="red" value="255" min="0" max="255">
-       Green: <input type="range" id="green" value="255" min="0" max="255">
-       blue: <input type="range" id="blue" value="255" min="0" max="255">
+    <div class="warp">
+      <div class="main">
+        <h2>colors picked</h2>
+        <!-- <div id="component">
+          <div></div>
+          <button id="remove">X</button>
+        </div>
+        <div>
+          <button id="add" >add color</button>
+        </div> -->
+        <ul id="list"></ul>
+        <div>
+          <!-- <button  onClick="addcolor(mycolor)">add color</button> -->
+          <button class="btn4" onClick="myAddFunction()">add color</button>
+          <!-- <button  onClick="myRemoveFunction()">remove color</button> -->
+        </div>
+      </div>
+      <div>
+        <h1>Colors Picker</h1>
+        <div id="myDIV"></div>
+        <div class="main2">
+          <div class=block1>
+            <h3>Result in RGB :</h3>
+            <input type="text" id="box" value="rgb(255,255,255)" autocomplete="off">
+            <button id="rgb btn" class="btn" onclick="clipPad2()">
+              <i class="fas fa-copy fa-1x"></i>
+            </button>
+          </div>
+          <div class="block1">
+            <h3>Result in HEX :</h3>
+            <input type="text" id="box2" value="#ffffff" autocomplete="off">
+            <button id="rgb btn" class="btn2" onclick="clipPad()">
+              <i class="fas fa-copy fa-1x"></i>
+            </button>
+          </div>
+          <input type="color" id="colorPicker">
+          Red: <input type="range" id="red" value="255" min="0" max="255">
+          Green: <input type="range" id="green" value="255" min="0" max="255">
+          blue: <input type="range" id="blue" value="255" min="0" max="255">
+        </div>
+      </div>
+      <div class="main">
+        <h2>Triade Colors</h2>
+        <div>
+          <button class="btn4" onClick="myAddFunction()">add color</button>
+        </div>
+      </div>
     </div>
     
     <script src="script.js"></script>
+    
 </body>
 </html>
 
