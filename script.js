@@ -75,34 +75,36 @@ function myColor2() {
 //   a.removeChild(item);
 // }
 
-count = 0;
+//
 
-function myAddFunction() {
-  var li = document.createElement("li");
-  var hexColor = document.getElementById('box2')
-  li.setAttribute('id', "li"+count);
-  li.setAttribute('class', "styles");
+// count = 0;
+
+// function myAddFunction() {
+//   var li = document.createElement("li");
+//   var hexColor = document.getElementById('box2')
+//   li.setAttribute('id', "li"+count);
+//   li.setAttribute('class', "styles");
   
-  var txtnode = document.createTextNode(hexColor.value)
-  li.style.backgroundColor = hexColor.value;
-  li.appendChild(txtnode);
+//   var txtnode = document.createTextNode(hexColor.value)
+//   li.style.backgroundColor = hexColor.value;
+//   li.appendChild(txtnode);
 
-  var btn = document.createElement("button");
-  btn.innerHTML = "X";
-  btn.setAttribute("onClick", 'remove("'+'li'+count+'")')
-  btn.setAttribute('class', "close");
-  li.appendChild(btn);
+//   var btn = document.createElement("button");
+//   btn.innerHTML = "X";
+//   btn.setAttribute("onClick", 'remove("'+'li'+count+'")')
+//   btn.setAttribute('class', "close");
+//   li.appendChild(btn);
 
-  count+=1;
+//   count+=1;
 
-  document.getElementById("list").appendChild(li);
+//   document.getElementById("list").appendChild(li);
 
-}
+// }
 
-function remove(x) {
-  var listval = document.getElementById(x);
-  document.getElementById("list").removeChild(listval);
-}
+// function remove(x) {
+//   var listval = document.getElementById(x);
+//   document.getElementById("list").removeChild(listval);
+// }
 
 //
 
@@ -169,15 +171,21 @@ function clipPad2() {
 // var mycolor = document.getElementById('box2').value;
 
 
-// let pallete = [];
+// pallete = [];
 
-// let addcolor = function(s) {
-//   var p = [s[0],s[1],s[2],s[3],s[4],s[5]];
+// document.getElementById('btn4').addEventListener('click', addcolor(myColor));
 
-//   pallete.unshift(p);
+// const addcolor = (s) => {
+//   return
 
-//   console.log(pallete);
+//         var p = [s[0],s[1],s[2],s[3],s[4],s[5]];
+
+//         pallete.unshift(p);
+
+//         console.log(pallete);
 // }
+
+// console.log("outside" + pallete);
 
 // let removeCard = function(n) {
 //   pallete.splice(n, 1);
@@ -187,12 +195,14 @@ function clipPad2() {
 
 
 
+
+
 // let addcard = function (s) {
-//   var ncol = [s[0],s[1],s[2]], cardAdded = false;
+//   var ncol = [s[0],s[1],s[2],s[3],s[4],s[5]], cardAdded = false;
 
 //   for(i = 0;i < pickedcolor.length; i++) {
-//     var a = ncol.join(','),
-// 				b = pickedcolor[i].join(',');
+//     var a = ncol,
+// 				b = pickedcolor[i];
 
 //         if (a === b) {
 //           cardAdded = true;
@@ -202,8 +212,54 @@ function clipPad2() {
 //   if (!cardAdded) {
 //     pickedcolor.unshift(ncol);
 //   }
-//   console.log(b);
+//   console.log(b.join(""));
 // }
+
+let pickedcolor = [];
+
+var mycolor = document.getElementById('box2');
+
+
+
+let count = 0;
+
+function addcolor () {
+  var ar = pickedcolor[0];
+
+  d = document.createElement("div");
+  d.setAttribute('id', "li"+count);
+  d.setAttribute('class', "styl");
+
+  var txtnode = document.createTextNode(ar);
+  d.appendChild(txtnode);
+
+  var btn = document.createElement("button");
+  btn.innerHTML = "X";
+  btn.setAttribute("onClick", `remove("li${count}")`);
+  btn.setAttribute('class', "clos");
+  d.appendChild(btn);
+
+  document.getElementById("component").appendChild(d);
+
+  addarray(mycolor.value);
+
+  function addarray (s) {
+    var ncol = [s[0],s[1],s[2],s[3],s[4],s[5]];
+  
+    pickedcolor.unshift(ncol.join(""));
+    pickedcolor.join("");
+  }
+
+  console.log(`${ar} ar`);
+
+  count+=1;
+
+}
+
+function remove(x) {
+  var listval = document.getElementById(x);
+  document.getElementById("component").removeChild(listval);
+}
 
 
 
